@@ -1,6 +1,6 @@
-import requests
 import os
-from flask import Flask, request, jsonify, json
+import requests
+from flask import Flask, Request, jsonify, json
 
 API_KEY = '2663e2bbd329aa8ccb641c1b9e05ae98'
 
@@ -23,6 +23,7 @@ def mostra_temp(cidade):
     #print(f"Temperatura maxima: {temp_max}")
     #print(f"Temperatura minima: {temp_min}")
     #print(f"Sensação termica: {real_feel}")
-    return f"Nuvens: {result['weather'][0]['description']}"
+    #return f"Nuvens: {descricao}"
+    return descricao, temp_atual, temp_max, temp_min, real_feel
 
 app.run(host="0.0.0.0", port=2000, debug = False)
